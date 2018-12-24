@@ -52,6 +52,15 @@
         }, 500);
     });
 
+    //read more, read less
+    $('.show-more').click(function() {
+        if($(this).attr('data-more') == 0) {
+            $(this).attr('data-more', 1);
+            $('.long-text').css('display', 'inline');
+            $(this).text('');
+        }
+    });
+
     // Create timeline
     $('#experience-timeline').each(function() {
 
@@ -97,3 +106,14 @@
     });
 
 })(jQuery);
+
+window.onscroll = function() {
+    myFunction();
+}
+
+function myFunction() {
+    var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (scroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}

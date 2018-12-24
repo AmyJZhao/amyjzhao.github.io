@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amy Zhao's Website</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,13 +26,13 @@
                 <a href="#about">About</a>
             </li>
             <li>
-                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
             </li>
             <li>
                 <a href="#education">Education</a>
             </li>
             <li>
-                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
             </li>
             <li>
                 <a href="#skills">Skills</a>
@@ -43,14 +41,20 @@
                 <a href="#contact">Contact</a>
             </li>
         </ul>
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
     </header>
+    
     <!-- End header -->
 
     <div id="lead">
         <div id="lead-content">
             <h1>Amy Zhao</h1>
             <h2>Software Engineer</h2>
-            <a href="https://drive.google.com/file/d/1SefqY1ncuz3BCiroz9ycqSgdfYQAnyh1/view?usp=sharing" class="btn-rounded-white">Resume</a>
+            <a href="https://drive.google.com/file/d/1SefqY1ncuz3BCiroz9ycqSgdfYQAnyh1/view?usp=sharing" class="btn-rounded-white" target="_blank">Resume</a>
+            <a href="https://github.com/AmyJZhao" class="btn-rounded-white" target="_blank">Github</a>
+            <a href="https://www.linkedin.com/in/amy-j-zhao/" class="btn-rounded-white" target="_blank">Linkedin</a>
         </div>
         <!-- End #lead-content -->
 
@@ -64,7 +68,7 @@
         <!-- End #lead-down -->
     </div>
     <!-- End #lead -->
-<!--
+
     <div id="about">
         <div class="container">
             <div class="row">
@@ -73,41 +77,149 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat. Donec
-                        eu vehicula neque. Donec viverra lorem nunc, tempus euismod eros sollicitudin ut. Quisque et tincidunt libero. Donec id pharetra justo. Proin euismod lacinia dolor, eu scelerisque justo tempus pharetra. Vivamus nunc justo, finibus
-                        ut nisl sed, euismod rhoncus nulla. Proin sed magna egestas, egestas ante et, congue eros. In consequat, mauris dapibus tincidunt suscipit, ex libero aliquet diam, at maximus risus enim non leo.
+                        
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    -->
+    
     <!-- End #about -->
     
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Personal Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project no-image shadow-large">
+                    <div class="project-info">
+                        <h3>Stable Matching Problem</h3>
+                        <p>
+                            <span class="short-text">
+                            Implemented stable matching algorithm using <b>Python</b> that takes the same number of men and women and pairs them off based on preference in such a way that everybody ends up married to somebody and nobody is married to more than one person.  
+                            </span>
+                            <span class="long-text">
+                            <br />
+                            <br />
+                            <u>Parameters</u>: <br />
+                            - User inputs a number N of how many men and women are to be paired off (ex: user input of 1 means 1 pair to be matched) <br />
+                            - Men are numbered 1 to N, and women are numbered 1 to N <br />
+                            - Each man ranks all the women in order from highest preference to lowest preference (ex: Man 1's preference list is 2 4 3 1, so he most prefers to propose to Woman 2 while Woman 1 is last) <br />
+                            - Each woman does the same and ranks all the men <br />
+                            <br />
+                            <u>Output</u>: <br />
+                            A set of marriages with no instabilities (no man and woman in different pairs prefer each other to their current partners) <br />
+                            <br />
+                            <u>Data Structures</u>: <br />
+                            - Two two-dimensional arrays, ManPref and WomanPref, for women's preference lists and men's preference lists <br />
+                            &#8195;- ManPref[m, i] denotes the ith woman on man m's preference list <br />
+                            &#8195;- WomanPref[w, i] denotes the ith man on woman w's preference list <br />
+                            - Linked list to hold set of free men who are not engaged <br />
+                            - Array Next that indicates for each man m the position of the next woman he will propose to on his preference list <br />
+                            &#8195;- Next[m] is initialized with 1 for all men m <br />
+                            - Array Current to store current engagements <br />
+                            &#8195;- Current[w] is initialized to None for all women to indicate they are not currently engaged <br />
+                            &#8195;- Current[w] is woman w's current partner m' <br />
+                            - N x N array Ranking where Ranking[w, m] contains the rank of man m in the sorted order of w's preferences (enables us to decide if man proposing to woman w is higher or lower on her preference list than her current fiance if she has one) <br />
+                            </span>
+                            <span class="show-more" data-more="0">Read More...</span>
+                            
+                            <br />
+                        </p>
+                        <a href="#" target="_blank">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+            </div>
+        </div>
+        <h2 class="heading">Web Design</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/Mote1.jpg" style="border-right: 1px solid #CCCCCC"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>Mote</h3>
+                        <p>
+                            Created, designed, and maintained WordPress website for environmental startup, and added mailing list function
+                        </p>
+                        <a href="https://www.co2mote.com" target="_blank">View Website</a>
+                    </div>
+                </div>
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/UIP.jpg" />
+                    </div>
+                    <div class="project-info" style="padding-left: 30px">
+                        <h3>UCLA Engineering <br />Office of Student and Academic Affairs</h3>
+                        <p>
+                            Performed a complete overhaul of the Undergraduate Internship Program (UIP) and Undergraduate Research Program (URP) (School of Engineering) websites, giving it a modern and fresh look that gives students a much better user experience
+                        </p>
+                        <br />
+                        <a href="https://www.seasoasa.ucla.edu/undergraduate-internship-program/" target="_blank">View UIP Website</a> <br /> <br />
+                        <a href="https://www.seasoasa.ucla.edu/undergraduate-research-program/" target="_blank">View URP Website</a>
+                    </div>
+                </div>
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/kilariscreenshot.jpg" style="border-right: 1px solid #CCCCCC"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>Shopify</h3>
+                        <p>
+                            Implemented a feature for an e-commerce fashion startup using <b>Liquid</b> that allows the product page to display other items worn by a model wearing a complete outfit. <br />Since styling is an important part of this new brand, it was crucial to display the different outfits that could be made from the individual tops, bottoms, dresses, and outerwear offered. Allowing customers to add these individual items without leaving the complete outfit product page made upselling more effective.
+                        </p>
+                        <a href="https://github.com/AmyJZhao/Shopify-Work" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <h2 class="heading">Class Projects</h2>
+        <div class="container">
+            <div class="row">
+                
+            </div>
+        </div>
+          -->
+    </div>
+  
+    <!-- End #projects -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>University of California, Los Angeles</h3>
+            <span class="education-date">Sept 2017 - June 2021</span>
+            <h4>Bachelor of Science in Computer Science and Engineering</h4>
+            <p>
+                Coursework: <br />
+                - Introduction to C++ <br />
+                - Data Structures <br />
+                - Introduction to Algorithms and Complexity <br />
+                - Computer Organization <br />
+                - Software Construction Laboratory (Linux, bash, shell scripting, Python, etc.) <br />
+                - Multivariable Calculus <br />
+                - Physics: Mechanics and Electromagnetism <br />
+            </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
-            <!--
-            <div data-date="October 2018 - present">
-                <h3>ACM Teach LA</h3>
-                <h4>Student Developer</h4>
-                <p>
-                        I work on the Teach LA website and coding environment for students.
-                        
-                </p>
-            </div>
-            -->
             <div data-date="October 2018 - November 2018">
                 <h3>Tutorfly</h3>
-                <h4>Instructor</h4>
+                <h4>Assistant Instructor</h4>
                 <p>
-                        I teach two-hour HTML/CSS classes to kids aged 10-17 on Saturdays and Sundays and assist with projects and assignments.
+                        I taught HTML/CSS to kids aged 10-17 on Saturdays and Sundays and assisted them with projects and assignments.
                         
                 </p>
             </div>
             <div data-date="October 2018 - present">
                 <h3>UCLA Engineering Office of Academic and Student Affairs</h3>
-                <h4>Engineering Resource Center Student Clerk</h4>
+                <h4>Engineering Student Resource Center Clerk</h4>
                 <p>
                         I assist the Undergraduate Internship and Research Program director with all projects, including creating/maintaining URP and UIP websites using WordPress, creating marketing flyers, event planning and coordination, etc. I also man the front desk greeting guests and answering phone calls.
                         
@@ -145,54 +257,7 @@
     </div>
     <!-- End #experience -->
 
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of California, Los Angeles</h3>
-            <span class="education-date">Sept 2017 - June 2021</span>
-            <h4>Bachelor of Science in Computer Science and Engineering</h4>
-            <p>
-                Coursework: Introduction to C++, Data Structures and Algorithms, Computer Organization (x86-64), Software Construction Laboratory (Linux, bash, shell scripting, Python, etc.), Multivariable Calculus, Discrete Mathematics, Physics: Mechanics and Electromagnetism
-            </p>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-    <!--
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project no-image shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
-    <!-- End #projects -->
+    
 
     <div id="skills">
         <h2 class="heading">Skills</h2>
