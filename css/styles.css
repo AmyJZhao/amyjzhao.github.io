@@ -903,6 +903,6 @@ footer {
         padding: 5px 10px
     }
     #gloriousContainer {
-        padding: 0px;
+        display: none;
     }
 }
