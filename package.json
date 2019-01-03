@@ -1,0 +1,22 @@
+{
+  "name": "personal_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmyJZhao/amyjzhao.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmyJZhao/amyjzhao.github.io/issues"
+  },
+  "homepage": "https://github.com/AmyJZhao/amyjzhao.github.io#readme",
+  "dependencies": {
+    "@glorious/demo": "^0.7.1"
+  }
+}
