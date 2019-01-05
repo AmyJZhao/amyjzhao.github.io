@@ -558,7 +558,12 @@ footer {
     background: #fff;
     border-radius: 4px
 }
-
+#gloriousContainer {
+    max-width: 900px;
+    display: block;
+    margin: 0 auto 650px auto;
+    text-align: left;
+}
 .project-image {
     float: left
 }
@@ -902,7 +907,5 @@ footer {
         font-size: 0.9em;
         padding: 5px 10px
     }
-    #gloriousContainer {
-        display: none;
-    }
+    
 }

@@ -8,7 +8,7 @@ Woman 3 paired with Man 2
 `
 demo
     .openApp('terminal', {
-        minHeight: '530px'
+        minHeight: 530
     })
     .command('python stablematching.py', {
         promptString: '$',
